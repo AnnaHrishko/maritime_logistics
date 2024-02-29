@@ -233,6 +233,7 @@ header{
 }
 .main-section{
     padding: 238px 0 24px;
+    height: 100vh;
     @media(max-width: 991px){
         padding: 166px 0 48px;
     }
@@ -303,9 +304,13 @@ header{
             display: flex;
             align-items: center;
             justify-content: center;
-            @media(max-width: 1200px){
+            @media(max-width: 1300px){
                 width: calc(100%/3 - 25px);
                 margin-right: 50px;
+            }
+            @media(max-width: 1200px){
+                width: calc(100%/3 - 20px);
+                margin-right: 40px;
             }
             @media(max-width: 1050px){
                 width: calc(100%/3 - 15px);
@@ -324,17 +329,33 @@ header{
             }
             &__number{
                 color: rgb(255, 255, 255);
-                font-size: 39.58px;
+                font-size: 60px;
                 font-weight: 700;
-                line-height: 45.24px;
+                line-height: 96px;
                 letter-spacing: 0.15%;
                 padding-right: 24px;
-                border-right: 1px solid #fff;
+                position: relative;
+                &:after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    width: 1px;
+                    height: 46px;
+                    background-color: #fff;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
                 @media(max-width: 1050px){
                     padding-right: 11px;
                 }
                 @media(max-width: 991px){
-
+                    font-size: 39.58px;
+                    line-height: 45px;
+                }
+                @media(max-width: 768px){
+                    font-size: 42px;
+                    line-height: 48px;
                 }
             }
             .descr{
@@ -367,11 +388,6 @@ header{
         margin-bottom: 24px;
         &:last-of-type{
             margin-bottom: 0;
-        }
-        &.active{
-            .services-tab__content{
-                display: flex!important;
-            }
         }
         &__head{
             cursor: pointer;
@@ -426,7 +442,6 @@ header{
             display: none;
             border-radius: 8px;
             background-color: #00294C;
-            // display: flex;
             justify-content: space-between;
             padding: 24px;
             @media(max-width: 768px){
@@ -467,6 +482,17 @@ header{
                 }
                 img{
                     width: 100%;
+                }
+            }
+        }
+    }
+}
+.benefits-sec{
+    .center-wrap{
+        .descr{
+            br{
+                @media(max-width: 991px){
+                    display: none;
                 }
             }
         }
@@ -555,12 +581,15 @@ header{
         @media(max-width: 768px){
             margin-top: 48px;
         }
-        video{
-            margin-top: -2px;
-            margin-left: -2px;
-            outline: none;
+        img{
             width: 100%;
         }
+        // video{
+        //     margin-top: -2px;
+        //     margin-left: -2px;
+        //     outline: none;
+        //     width: 100%;
+        // }
    }
 }
 .advantages-sec{
@@ -583,6 +612,7 @@ header{
         flex-direction: column;
         flex-wrap: unset;
         align-items: center;
+        row-gap: 24px;
     }
     @media(max-width: 360px){
         padding: 0 24px;
@@ -731,10 +761,6 @@ header{
                 &::placeholder{
                     opacity: 1;
                 }
-            }
-            .error{
-                // position: absolute;
-                // bottom: 0;
             }
         }
     }

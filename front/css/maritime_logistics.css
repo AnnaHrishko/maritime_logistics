@@ -258,6 +258,7 @@ header {
 
 .main-section {
   padding: 238px 0 24px;
+  height: 100vh;
 }
 @media (max-width: 991px) {
   .main-section {
@@ -349,10 +350,16 @@ header {
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .main-section .statistics-wrap .statistics-row {
     width: calc(33.3333333333% - 25px);
     margin-right: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .main-section .statistics-wrap .statistics-row {
+    width: calc(33.3333333333% - 20px);
+    margin-right: 40px;
   }
 }
 @media (max-width: 1050px) {
@@ -378,16 +385,39 @@ header {
 }
 .main-section .statistics-wrap .statistics-row__number {
   color: rgb(255, 255, 255);
-  font-size: 39.58px;
+  font-size: 60px;
   font-weight: 700;
-  line-height: 45.24px;
+  line-height: 96px;
   letter-spacing: 0.15%;
   padding-right: 24px;
-  border-right: 1px solid #fff;
+  position: relative;
+}
+.main-section .statistics-wrap .statistics-row__number:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 46px;
+  background-color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @media (max-width: 1050px) {
   .main-section .statistics-wrap .statistics-row__number {
     padding-right: 11px;
+  }
+}
+@media (max-width: 991px) {
+  .main-section .statistics-wrap .statistics-row__number {
+    font-size: 39.58px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .main-section .statistics-wrap .statistics-row__number {
+    font-size: 42px;
+    line-height: 48px;
   }
 }
 .main-section .statistics-wrap .statistics-row .descr {
@@ -421,9 +451,6 @@ header {
 }
 .services-faq .services-tab:last-of-type {
   margin-bottom: 0;
-}
-.services-faq .services-tab.active .services-tab__content {
-  display: flex !important;
 }
 .services-faq .services-tab__head {
   cursor: pointer;
@@ -538,6 +565,12 @@ header {
   width: 100%;
 }
 
+@media (max-width: 991px) {
+  .benefits-sec .center-wrap .descr br {
+    display: none;
+  }
+}
+
 .benefits-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -638,10 +671,7 @@ header {
     margin-top: 48px;
   }
 }
-.delivery-sec__map video {
-  margin-top: -2px;
-  margin-left: -2px;
-  outline: none;
+.delivery-sec__map img {
   width: 100%;
 }
 
@@ -670,6 +700,7 @@ header {
     flex-direction: column;
     flex-wrap: unset;
     align-items: center;
+    row-gap: 24px;
   }
 }
 @media (max-width: 360px) {
@@ -845,6 +876,7 @@ header {
 .contact-form-sec .inputs-flex .input-row input::placeholder {
   opacity: 1;
 }
+
 .footer-top {
   display: flex;
   align-items: center;
