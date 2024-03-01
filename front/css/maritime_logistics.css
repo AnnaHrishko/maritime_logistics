@@ -258,7 +258,6 @@ header {
 
 .main-section {
   padding: 238px 0 24px;
-  height: 100vh;
 }
 @media (max-width: 991px) {
   .main-section {
@@ -447,122 +446,109 @@ header {
 }
 
 .services-faq .services-tab {
+  transition: all 0.8s ease-out;
+  background-color: #F5FAFE;
+  display: flex;
   margin-bottom: 24px;
+  padding: 24px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
 }
 .services-faq .services-tab:last-of-type {
   margin-bottom: 0;
 }
-.services-faq .services-tab__head {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #F5FAFE;
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
-}
 @media (max-width: 768px) {
-  .services-faq .services-tab__head {
+  .services-faq .services-tab {
     flex-direction: column-reverse;
-    align-items: flex-start;
+    align-items: unset;
+    justify-content: unset;
   }
 }
-.services-faq .services-tab__head-title {
-  display: flex;
-  text-decoration: unset;
-  align-items: center;
-  position: relative;
-}
-.services-faq .services-tab__head-title span {
-  margin-right: 8px;
-}
-.services-faq .services-tab__head-title span .icon-mobile {
-  display: none;
-}
-@media (max-width: 768px) {
-  .services-faq .services-tab__head-title span .icon-mobile {
-    display: inline;
-  }
-}
-@media (max-width: 768px) {
-  .services-faq .services-tab__head-title .icon {
-    display: none;
-  }
-}
-.services-faq .services-tab__head-img {
-  width: 340px;
-  border-radius: 4px;
-  overflow: hidden;
-}
-@media (max-width: 768px) {
-  .services-faq .services-tab__head-img {
-    width: 100%;
-    height: 96px;
-    margin-bottom: 24px;
-  }
-}
-.services-faq .services-tab__head-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.services-faq .services-tab__content {
-  display: none;
-  border-radius: 8px;
+.services-faq .services-tab.active {
+  align-items: unset;
   background-color: #00294C;
-  justify-content: space-between;
-  padding: 24px;
 }
-@media (max-width: 768px) {
-  .services-faq .services-tab__content {
-    flex-direction: column-reverse;
-  }
-}
-.services-faq .services-tab__content-text {
+.services-faq .services-tab.active .services-tab__text {
   width: 40%;
 }
 @media (max-width: 991px) {
-  .services-faq .services-tab__content-text {
+  .services-faq .services-tab.active .services-tab__text {
     width: calc(100% - 368px);
     margin-right: 28px;
   }
 }
 @media (max-width: 768px) {
-  .services-faq .services-tab__content-text {
+  .services-faq .services-tab.active .services-tab__text {
     width: 100%;
     margin-right: 0;
   }
 }
-.services-faq .services-tab__content-text h3 {
+.services-faq .services-tab.active .services-tab__text-title {
   width: 60%;
   padding-bottom: 22px;
   border-bottom: 1px solid #fff;
   margin-bottom: 22px;
 }
 @media (max-width: 768px) {
-  .services-faq .services-tab__content-text h3 {
+  .services-faq .services-tab.active .services-tab__text-title {
     padding-bottom: 24px;
     margin-bottom: 24px;
     width: 90%;
   }
 }
-.services-faq .services-tab__content-text p {
+.services-faq .services-tab.active .services-tab__text-title span {
+  color: #fff;
+}
+.services-faq .services-tab.active .services-tab__text-title .icon {
+  display: none;
+}
+.services-faq .services-tab.active .services-tab__text-hide {
+  display: block;
+}
+.services-faq .services-tab.active .services-tab__img {
+  height: auto;
+}
+.services-faq .services-tab__text {
+  width: calc(100% - 343px);
+}
+@media (max-width: 768px) {
+  .services-faq .services-tab__text {
+    width: 100%;
+  }
+}
+.services-faq .services-tab__text-title span {
+  display: flex;
+  align-items: center;
+}
+.services-faq .services-tab__text-title span .icon {
+  margin-left: 8px;
+}
+.services-faq .services-tab__text-hide {
+  display: none;
+}
+.services-faq .services-tab__text-hide .descr {
   margin-bottom: 24px;
 }
-.services-faq .services-tab__content-img {
-  width: 340px;
+.services-faq .services-tab__img {
+  width: 343px;
+  height: 92px;
   border-radius: 4px;
+  object-fit: cover;
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  .services-faq .services-tab__content-img {
+  .services-faq .services-tab__img {
     width: 100%;
+    height: 96px;
     margin-bottom: 24px;
   }
 }
-.services-faq .services-tab__content-img img {
+.services-faq .services-tab__img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 991px) {

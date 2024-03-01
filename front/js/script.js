@@ -1,10 +1,9 @@
 $(document).ready(function() {
     $('.services-tab').click(function() {
-        $('.services-tab').not(this).find('.services-tab__content').slideUp()
-        $(this).find('.services-tab__content').slideToggle().css('display', 'flex');
+        $(this).toggleClass('active')
+        $('.services-tab').not(this).removeClass('active')
         return false;
     });
-
 
     $.validator.addMethod("emailRegex", function(value, element) {
             return this.optional(element) || /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i.test(value);
@@ -30,9 +29,7 @@ $(document).ready(function() {
                 },
                 "phone": {
                     required: true,
-                    // number: true,
                     phoneRegex: true,
-                    // minlength: 16,
                 },
             },
             messages: {
@@ -42,9 +39,7 @@ $(document).ready(function() {
                 },
                 "phone": {
                     required: "Required field",
-                    // number: "Enter only number",
                     phoneRegex: "Enter valid phone number",
-                    // minlenght: "Enter full phone number",
                 },
             },
         });
@@ -60,36 +55,6 @@ $(document).ready(function() {
 
     });
 
-
-
-
-    //height for main section
-    let windowHeight = $(window).height();
-    $('.main-section').css('min-height', windowHeight + 'px');
-    $(window).resize(function(){
-        let newWindowHeight = $(window).height();
-        $('.main-section').css('min-height', newWindowHeight + 'px');
-    });
-
-
-    // let windowHeight = $(window).height();
-    // let contentHeight = $('.main-section').outerheight(true);
-    
-    // if (contentHeight > windowHeight) {
-    //     $('.main-section').css('height', 'auto');
-    // } else {
-    //     $('.main-section').css('min-height', windowHeight + 'px');
-    // }
-    
-    // $(window).resize(function(){
-    //     let newWindowHeight = $(window).height();
-    //     let newContentHeight = $('.main-section').height();
-        
-    //     if (newContentHeight > newWindowHeight) {
-    //         $('.main-section').css('height', 'auto');
-    //     } else {
-    //         $('.main-section').css('min-height', newWindowHeight + 'px');
-    //     }
-    // });
        
 });
+
